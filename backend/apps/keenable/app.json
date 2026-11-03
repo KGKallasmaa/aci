@@ -1,0 +1,17 @@
+{
+  "name": "KEENABLE",
+  "display_name": "Keenable",
+  "logo": "https://keenable.ai/favicon.ico",
+  "provider": "Keenable",
+  "version": "1.0.0",
+  "description": "Keenable is a web search API built for AI agents. It returns ranked results with title, URL, and a short description. The public search endpoint works without an API key.",
+  "security_schemes": {
+    "no_auth": {}
+  },
+  "default_security_credentials_by_scheme": {},
+  "categories": [
+    "Search & Scraping"
+  ],
+  "visibility": "public",
+  "active": true
+}

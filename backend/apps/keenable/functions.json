@@ -1,0 +1,57 @@
+[
+  {
+    "name": "KEENABLE__SEARCH",
+    "description": "Search the web with Keenable's public search endpoint (no API key required). Returns a list of results, each with a title, url, a short description, and a longer snippet excerpt. Prefer the description; use the snippet only when the description is empty.",
+    "tags": ["search", "web"],
+    "visibility": "public",
+    "active": true,
+    "protocol": "rest",
+    "protocol_data": {
+      "method": "POST",
+      "path": "/v1/search/public",
+      "server_url": "https://api.keenable.ai"
+    },
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "type": "object",
+          "description": "header parameters",
+          "properties": {
+            "X-Keenable-Title": {
+              "type": "string",
+              "description": "Identifies the calling application to Keenable.",
+              "default": "ACI"
+            }
+          },
+          "required": ["X-Keenable-Title"],
+          "visible": [],
+          "additionalProperties": false
+        },
+        "body": {
+          "type": "object",
+          "description": "body parameters",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "The search query to execute."
+            },
+            "max_results": {
+              "type": "integer",
+              "description": "Maximum number of results to return (1-20). Default is 10.",
+              "default": 10,
+              "minimum": 1,
+              "maximum": 20
+            }
+          },
+          "required": ["query"],
+          "visible": ["query", "max_results"],
+          "additionalProperties": false
+        }
+      },
+      "required": ["header", "body"],
+      "visible": ["body"],
+      "additionalProperties": false
+    }
+  }
+]
